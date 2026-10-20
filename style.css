@@ -1,0 +1,478 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+*{
+    box-sizing: border-box;
+}
+:root{
+    --defaultYellow: #fbffa7;
+    --defaultLightBlue:#b1c5ff;
+    --defaultGreen: #b6ffc0;
+    --defaultOrange: #ff764d;
+    --defaultPurple: #d5b3ff;
+    --defaultDeepBlue: #0000ff;
+}
+/* 1. Book (Regular / Normal) */
+@font-face {
+    font-family: 'projectFont';
+    src: url('./fonts/futura-pt-book.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* 2. Book Oblique (Italic) */
+@font-face {
+    font-family: 'projectFont';
+    src: url('./fonts/futura-pt-book-oblique.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* 3. Medium */
+@font-face {
+    font-family: 'projectFont';
+    src: url('./fonts/futura-pt-medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Usage */
+body {
+    font-family: 'projectFont', sans-serif;
+}
+nav {
+    width: 100%;         /* Fits inside the scrollbar boundaries */
+    min-height: 10vh;    /* Allows growth if content requires it */
+    padding: 0 2%;   /* Fixed top/bottom padding, responsive left/right padding */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav ul{
+    display: flex;
+    justify-content: space-around;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+#nav-1{
+    border-bottom: 1px solid rgb(234, 232, 232) ;
+}
+#nav-1 ul:first-child{
+    width: 50%;
+    font-weight: 500;
+}
+#nav-1 ul:last-child{
+    width: 20%;
+    font-size: 15px;
+}
+#nav-1 ul:last-child li:first-child a{
+    color: var(--defaultDeepBlue);
+}
+#nav-2 ul{
+    margin-left: .5%;
+    width: 10%;
+    font-weight: 500;
+}
+#nav-2 ul li:first-child a{
+    color: var(--defaultOrange);
+}
+section{
+    display: flex;
+    justify-content: center;
+}
+#boxType-2{
+    min-height:80vh;
+
+}
+#boxType-2 div{
+    width: 80%;
+}
+.hero{
+    position: relative;
+}
+
+#boxType-2 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+.hero p{
+    position: absolute;
+    top: 40%;
+    left: 35%;
+    font-size: 120px;
+    color: var(--defaultOrange);
+}
+#boxType-1{
+    min-height: 80vh;
+    align-items: center;
+
+}
+#boxType-1 div{
+    width: 50%;
+    min-height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+#boxType-1 p:first-child{
+    font-weight: 500;
+    font-size: 30px;
+}
+#boxType-3{
+    width: 100%;
+    height: 100vh;
+}
+.yellowBg{
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+}
+.yellowBg div{
+    background-color: var(--defaultYellow);
+    grid-column: 5/12;
+    grid-row: 1/10;
+}
+.yellowBg img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.yellowBg img:first-of-type{
+   grid-column: 2/6;
+   grid-row: 2/9; 
+}
+.yellowBg img:last-of-type{
+    grid-column: 7/11;
+    grid-row: 3/8;
+}
+#boxType-1 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.thirdTxtSection div{
+    height: 25vh;
+}
+.greenBg{
+    display: grid;
+    grid-template-columns: repeat(11,1fr );
+    grid-template-rows: repeat(9,1fr);
+}
+.greenBg div{
+    background-color: var(--defaultGreen);
+    grid-column: 1/7;
+    grid-row: 1/10;
+}
+.greenBg img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.greenBg img:first-of-type{
+    grid-column: 2/5;
+    grid-row: 2/5;
+}
+ .greenBg img:nth-of-type(2){
+    grid-column: 2/5;
+    grid-row: 6/9;
+ }
+.greenBg img:last-of-type{
+    grid-column: 6/11;
+    grid-row: 3/8;
+}
+.purpleBg{
+    display: grid;
+    grid-template-columns: repeat(11,1fr );
+    grid-template-rows: repeat(9,1fr);
+}
+.purpleBg div{
+    background-color: var(--defaultPurple);
+    grid-column: 3/10;
+    grid-row: 1/10;
+}
+.purpleBg img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.purpleBg img:first-of-type{
+    grid-column: 2/6;
+    grid-row: 3/8;
+}
+.purpleBg img:last-of-type{
+    grid-column: 8/12;
+    grid-row: 2/9;
+}
+.sixthTxtSection div{
+    height: 30vh;
+}
+.lastType-2 div{
+    display: flex;
+}
+.lastType-2 div img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.lastType-2 div >:first-child, .lastType-2 div >:last-child{
+    flex: 1;
+    min-width: 0;
+}
+.lastType-2 div >:last-child{
+    background-color: var(--defaultLightBlue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.lastType-2 div >:last-child p{
+    flex-basis: 60%;
+    font-weight: 500;
+    font-size: 25px;
+}
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footerContainer{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(17, 1fr);
+    width: 80%;
+    height: 80%;
+    font-size: 15px;
+}
+.column-1{
+    grid-column: 1/2;
+    grid-row: 1/15;
+    display: flex;
+    flex-direction: column;
+
+    
+}
+.column-1 .row-2, .column-1 .row-3 {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.column-1 .row-2 div, .column-1 .row-3 div{
+    display: flex;
+    align-items: center;
+}
+.column-1 .row-2 div a, .column-1 .row-2 div svg, .column-1 .row-3 div a, .column-1 .row-3 div svg, .column-1 .row-3 p{
+    padding: 5px 2px;
+}
+.column-1 .row-2 div svg, .column-1 .row-3 div svg {
+    width: 10px;
+    height: auto;
+    flex-shrink: 0;
+}
+.column-1 .row-2 div:last-of-type{
+    height: auto;
+
+}
+.column-1 .row-2 div:last-of-type svg{
+    flex: 1;
+
+}
+.column-1 .row-3 p{
+    font-weight: 500;
+}
+.column-2{
+    grid-column: 3/4;
+    grid-row: 2/16;
+    display: flex;
+    flex-direction: column;
+}
+.column-2 .row-1, .column-2 .row-2 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.column-2 .row-1 div, .column-2 .row-2 div, .column-2 .row-1 p, .column-2 .row-2 p{
+    display: flex;
+    align-items: center;
+}
+.column-2 .row-1 div a, .column-2 .row-1 div svg,.column-2 .row-1 p, .column-2 .row-2 div a, .column-2 .row-2 div svg,.column-2 .row-2 p {
+    padding: 5px 2px;
+}
+.column-2 .row-1 div svg, .column-2 .row-2 div svg{
+    width: 10px;
+    height: auto;
+    flex-shrink: 0;
+}
+.column-2 .row-1 p, .column-2 .row-2 p{
+    font-weight: 500;
+}
+
+.column-3{
+    grid-column: 5/7;
+    grid-row: 2/16;
+    display: flex;
+    flex-direction: column;
+}
+.column-3 .row-1, .column-3 .row-2{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.column-3 .row-1 p, .column-3 .row-2 p{
+    padding: 5px 2px;
+}
+.column-3 .row-1 div{
+    display: flex;
+    height: 5vh;
+}
+.column-3 .row-1 div input{
+    flex-basis: 0;
+    flex-grow: 4;
+    padding: 2px 10px;
+    border: none;
+    background-color: rgb(241, 241, 241);
+}
+.column-3 .row-1 div input::placeholder{
+    color: rgb(210, 208, 208);
+    font-size: 12px;
+    font-weight: 400;
+}
+.column-3 .row-1 div button{
+    flex-basis: 0;
+    flex-grow: 1;
+    background-color: var(--defaultDeepBlue);
+    color: #fff;
+    border: none;
+    outline: none;
+    font-size: 12px;
+    cursor: pointer;
+    transition: .5s ease-in;
+}
+.column-3 .row-1 div button:hover{
+    background-color: white;
+    color: var(--defaultDeepBlue);
+    outline: 1px solid var(--defaultDeepBlue);
+}
+.column-3 .row-2 p{
+    font-weight: 500;
+}
+.footerDropdown{
+    display: flex;
+    width: 80%;
+    gap: 2%;
+    position: relative;
+}
+.footerDropdown button{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: none;
+    font-size: 13px;
+    padding: 7px 2px;
+    cursor: pointer;
+}
+.activeLanguage:hover, .activeLocation:hover{
+    background-color: rgb(232, 232, 232);
+}
+.activeLanguage:hover + .menu-1, .menu-1:hover{
+    display: block;
+}
+.activeLocation:hover + .menu-2, .menu-2:hover{
+    display: block;
+}
+
+.footerDropdown ul{
+    position: absolute;
+    top: 100%; /* Starts exactly at the bottom edge of the button */
+    width: 49%;
+    height: 80px;
+    z-index: 100;
+    background-color: white;
+    overflow-y: auto;
+    display: none;
+    cursor: pointer;
+}
+.footerDropdown ul:last-of-type{
+    right: 0;
+}
+.footerDropdown ul li{
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    margin-top: 1px;
+    background-color: rgb(245, 243, 243);
+}
+.footerDropdown ul li:hover{
+      background-color: rgb(232, 232, 232);
+}
+.bottomRow{
+    grid-column: 1/7;
+    grid-row: 17/18;
+    display: flex;
+}
+.bottomRow ul{
+    display: flex;
+    gap: 3%;
+    align-items: center;
+}
+.bottomRow ul li{
+    padding: 5px;
+}
+.bottomRow ul:first-of-type{
+    flex: 3;
+}
+.bottomRow ul:last-of-type{
+    flex: 1;
+    justify-content: end;
+}
